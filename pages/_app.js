@@ -1,7 +1,21 @@
-import '../styles/globals.css'
+import "../styles/globals.css";
+import Layout from "./components/Layout";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function App({ Component, pageProps }) {
+  return (
+    <div>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+      <style jsx global>{`
+        .link {
+          text-decoration: none;
+        }
+
+        .active {
+          color: tomato;
+        }
+      `}</style>
+    </div>
+  );
 }
-
-export default MyApp
